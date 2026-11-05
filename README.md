@@ -6,6 +6,15 @@
 
 Official implementation of the Mamba-UNet++ segmentation architecture — a hybrid CNN–State Space Model that integrates UNet++ dense skip connections with Mamba state-space blocks to capture long-range spatial dependencies in medical images.
 
+## Paper Summary
+
+**Hybrid Mamba and UNet plus plus framework for robust diabetic foot ulcer segmentation**
+
+Diabetic foot ulcer segmentation is difficult because wounds have irregular borders, varied tissue appearance, and complex clinical backgrounds.
+This work combines U-Net++ multi-scale feature fusion with bidirectional Mamba blocks to model long-range spatial context, trained with BCE and Focal Tversky loss.
+On FUSC2021, it achieves a Dice score of 0.9140 and IoU of 0.8416; on DFUC2022, it achieves a Dice score of 0.8427 and IoU of 0.7281.
+The results outperform standard U-Net and U-Net++ baselines, supporting state-space modeling for automated diabetic wound analysis.
+
 ## Overview
 
 Diabetic foot ulcer (DFU) segmentation presents extreme challenges: lesions often occupy less than 5% of image area with highly irregular boundaries. Mamba-UNet++ addresses this by combining the multi-scale feature fusion of UNet++ with the global context modeling of Mamba state-space blocks, achieving state-of-the-art performance on the DFUC2022 benchmark.
@@ -146,7 +155,21 @@ prediction = (1 / (1 + np.exp(-logit_map)) > 0.5).astype(np.float32)
 
 ## Citation
 
-If you use this work, please cite
+If you use this work, please cite:
+
+> Velladurai, D.W., Venkatesan, R., Debnath, S. et al. Hybrid Mamba and UNet plus plus framework for robust diabetic foot ulcer segmentation. *Discover Applied Sciences* **8**, 1135 (2026). https://doi.org/10.1007/s42452-026-09128-5
+
+```bibtex
+@article{velladurai2026hybrid,
+  title   = {Hybrid Mamba and UNet plus plus framework for robust diabetic foot ulcer segmentation},
+  author  = {Velladurai, D. W. and Venkatesan, R. and Debnath, S. and others},
+  journal = {Discover Applied Sciences},
+  volume  = {8},
+  pages   = {1135},
+  year    = {2026},
+  doi     = {10.1007/s42452-026-09128-5}
+}
+```
 
 
 ## License
